@@ -57,9 +57,11 @@ const student = [
 
 // const MONGO_URL="mongodb://localhost";
 //mongodb connection
-const MONGO_URL = process.env.MONGO_URL;
+
 async function createConnection() {
-  const client = new MongoClient(MONGO_URL);
+  const client = new MongoClient(
+    "mongodb://satyanarayana:satyanarayana@cluster0-shard-00-00.pnnqy.mongodb.net:27017,cluster0-shard-00-01.pnnqy.mongodb.net:27017,cluster0-shard-00-02.pnnqy.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-d9c8kc-shard-0&authSource=admin&retryWrites=true&w=majority"
+  );
   await client.connect();
   console.log("mongodb is connected");
   return client;
